@@ -64,6 +64,10 @@ class MtrExample extends Module {
         return true;
     }
 
-
+    public function getContent()
+    {
+    
+        return 'getContent method';
+    }
     
 }
