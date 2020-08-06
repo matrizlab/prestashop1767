@@ -66,6 +66,12 @@ class MtrExample extends Module {
 
     public function getContent()
     {
+        if (Tools::isSubmit('submitMtrExample')) 
+        {
+            $newUrl = Tools::getValue('exampleUrl');
+            Configuration::updateValue('MATRIZLAB_PS_MODULE', $newUrl);
+        }
+
         return $this->display(__FILE__,'configure.tpl');
     }
     
