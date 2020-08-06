@@ -66,8 +66,7 @@ class MtrExample extends Module {
 
     public function getContent()
     {
-    
-        return 'getContent method';
+        return $this->display(__FILE__,'configure.tpl');
     }
     
 }
