@@ -66,12 +66,16 @@ class MtrExample extends Module {
 
     public function getContent()
     {
+        $this->smarty->assign('save', false);
+
         if (Tools::isSubmit('submitMtrExample')) 
         {
             $newUrl = Tools::getValue('exampleUrl');
             Configuration::updateValue('MATRIZLAB_PS_MODULE', $newUrl);
+            $this->smarty->assign('save', true);
         }
-
+        $urlValue = Configuration::get('MATRIZLAB_PS_MODULE');
+        $this->smarty->assign('urlValue',$urlValue);
         return $this->display(__FILE__,'configure.tpl');
     }
     
